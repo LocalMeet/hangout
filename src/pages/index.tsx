@@ -40,30 +40,28 @@ const HomePage: React.FC = () => {
         {/* Categories Section */}
         <ContentBlock>
           <SectionTitle>
-            Hangout is a meetup where everyone first meets
+            Hangout is a one-time, first-time meetup
           </SectionTitle>
           <SpacerMedium />
           <HangoutShowcase />
           <SectionSubtitle>
-            We'll email you a list of hangouts based on interests, group sizes, dates, and locations.
+            A hangout is a one-time event where everyone meets for the first time.
+            <br />
+            <br />
+            Upon signing up on our form, we'll email you a list of hangouts on various interests, group sizes, dates, and locations.
           </SectionSubtitle>
         </ContentBlock>
 
         {/* Hangouts Section */}
         <ContentBlock>
           <HangoutsContainer>
-            <PersonDetailCard />
-            <SectionSubtitle>
-              You can see who is participating and view their profiles.
-            </SectionSubtitle>
             <HangoutDetail />
             <SectionSubtitle>
-              When you find something that interests you, and people you'd like to be friends with, hit the join button to add yourself to the group.
-              <br/>
-              <br/>
-              Or, create your hangout.
-              <br/>
-              Give it a title and a description about what you'd enjoy while meeting new people. Set the date, location, size, and the types of people you would like to join.
+              When you find something that interests you, hit the "Join" button in a hangout to add yourself to the group.
+            </SectionSubtitle>
+            <PersonDetailCard />
+            <SectionSubtitle>
+              Before joining a hangout, you can check who is participating and view their profiles
             </SectionSubtitle>
           </HangoutsContainer>
         </ContentBlock>
@@ -72,13 +70,13 @@ const HomePage: React.FC = () => {
         <ContentBlock>
           <GroupChatPreview />
           <SectionSubtitle>
-            We'll invite you to an Instagram group chat so you can keep the conversation going before and after your hangouts.
+            We'll invite you to an Instagram group chat once you join a hangout. You can keep the conversation going before and after!
           </SectionSubtitle>
         </ContentBlock>
 
         {/* Call to Action */}
         <ContentBlock $cta>
-          <CTATitle>Join your first hangout</CTATitle>
+          <CTATitle>Interested in joining a hangout?</CTATitle>
           <CTAButton href="https://form.typeform.com/to/Cp6lYX6v" target="_blank" rel="noopener noreferrer">Get Started</CTAButton>
         </ContentBlock>
       </MainContent>
