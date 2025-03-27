@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
   return (
     <HeaderContainer>
       <LogoContainer>
-        <LogoText as={Link} to="/">LocalMeet</LogoText>
+        <LogoText>LocalMeet</LogoText>
       </LogoContainer>
     </HeaderContainer>
   );
