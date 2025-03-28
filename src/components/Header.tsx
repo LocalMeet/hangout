@@ -5,7 +5,7 @@ const Header: React.FC = () => {
   return (
     <HeaderContainer>
       <LogoContainer>
-        <LogoText>LocalMeet</LogoText>
+        <LogoText>Hangout</LogoText>
       </LogoContainer>
     </HeaderContainer>
   );

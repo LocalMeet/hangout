@@ -40,14 +40,11 @@ const HomePage: React.FC = () => {
         {/* Categories Section */}
         <ContentBlock>
           <SectionTitle>
-            Hangout is a one-time, first-time meetup
+            Hangout is a one-time event where everyone meets for the first time.
           </SectionTitle>
           <SpacerMedium />
           <HangoutShowcase />
           <SectionSubtitle>
-            A hangout is a one-time event where everyone meets for the first time.
-            <br />
-            <br />
             Upon signing up on our form, we'll email you a list of hangouts on various interests, group sizes, dates, and locations.
           </SectionSubtitle>
         </ContentBlock>
@@ -55,13 +52,13 @@ const HomePage: React.FC = () => {
         {/* Hangouts Section */}
         <ContentBlock>
           <HangoutsContainer>
-            <HangoutDetail />
-            <SectionSubtitle>
-              When you find something that interests you, hit the "Join" button in a hangout to add yourself to the group.
-            </SectionSubtitle>
             <PersonDetailCard />
             <SectionSubtitle>
-              Before joining a hangout, you can check who is participating and view their profiles
+              For each hangout, you can also check who is participating and view their profiles
+            </SectionSubtitle>
+            <HangoutDetail />
+            <SectionSubtitle>
+              When you find something that interests you, hit the "Join" button to add yourself to the group.
             </SectionSubtitle>
           </HangoutsContainer>
         </ContentBlock>
