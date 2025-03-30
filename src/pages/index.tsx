@@ -52,6 +52,9 @@ const HomePage: React.FC = () => {
         {/* Hangouts Section */}
         <ContentBlock>
           <HangoutsContainer>
+            <SectionTitle>
+              Check Who's In!
+            </SectionTitle>
             <PersonDetailCard />
             <SectionSubtitle>
               For each hangout, you can also check who is participating and view their profiles
@@ -65,6 +68,9 @@ const HomePage: React.FC = () => {
 
         {/* Chat Section */}
         <ContentBlock>
+          <SectionTitle>
+            Group Chat on Instagram
+          </SectionTitle>
           <GroupChatPreview />
           <SectionSubtitle>
             We'll invite you to an Instagram group chat once you join a hangout. You can keep the conversation going before and after!
@@ -212,6 +218,7 @@ const ContentBlock = styled.div<{ $alternate?: boolean; $cta?: boolean }>`
 
 const SectionTitle = styled.h2`
   text-align: left;
+  align-self: flex-start;
   color: #333;
   font-size: 2.5rem;
   line-height: 1.4;

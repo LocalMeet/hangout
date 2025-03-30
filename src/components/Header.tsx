@@ -13,7 +13,7 @@ const Header: React.FC = () => {
 
 // Header styled components
 const HeaderContainer = styled.header`
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
