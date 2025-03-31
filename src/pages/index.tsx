@@ -98,7 +98,7 @@ const HomePage: React.FC = () => {
             See who's joining the hangout before you jump in. You can see member profiles that include interests, age, and gender, so you know who you'll meet.
             <br />
             <br />
-            If you're hosting a hangout, you're in more control. Set more detailed criteria, like culture, language, and more, to find your perfect first meets.
+            If you're hosting a hangout, you're in more control! Set more detailed criteria, like culture, language, and more, to find your perfect first meets.
           </SectionSubtitle>
         </ContentBlock>
 
