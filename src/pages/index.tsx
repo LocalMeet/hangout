@@ -45,7 +45,7 @@ const HomePage: React.FC = () => {
               <EmphasisPrimary>New Friends</EmphasisPrimary>
             </HeroQuestion>
             <HeroSubtitle>
-              Join Hangout to meet new people and make new friends
+              <i>Join Hangout to meet new people and make new friends</i>
             </HeroSubtitle>
           </HeroHeader>
         </HeroContent>
@@ -172,7 +172,7 @@ const HeroContent = styled.div`
 `;
 
 const HeroHeader = styled.div`
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 `;
 
 const HeroQuestion = styled.h1`
