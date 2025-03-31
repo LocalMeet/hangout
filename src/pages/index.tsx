@@ -67,7 +67,7 @@ const HomePage: React.FC = () => {
         {/* Form Section */}
         <ContentBlock>
           <SectionTitle>
-            Participate by Signing up Through Our Form
+            Sign Up Our Form to Participate
           </SectionTitle>
           <SpacerMedium />
           <FormImageContainer>
