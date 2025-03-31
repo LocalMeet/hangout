@@ -69,7 +69,6 @@ const HomePage: React.FC = () => {
           <SectionTitle>
             Sign Up Our Form to Participate
           </SectionTitle>
-          <SpacerMedium />
           <FormImageContainer>
             <FormImage src={formPreview} alt="Hangout signup form preview" />
           </FormImageContainer>
@@ -83,7 +82,6 @@ const HomePage: React.FC = () => {
           <SectionTitle>
             What is Hangout?
           </SectionTitle>
-          <SpacerMedium />
           <HangoutShowcase />
           <SectionSubtitle>
             Hangout is a one-time event where everyone meets for the first time. Join or host activities you enjoy, and meet new people as a plus.
@@ -95,7 +93,6 @@ const HomePage: React.FC = () => {
           <SectionTitle>
             Check Who's In!
           </SectionTitle>
-          <SpacerSmall />
           <PersonDetailCard />
           <SectionSubtitle>
             See who's joining the hangout before you jump in! We show you member profiles with interests, age, and gender, so you know who you'll meet.
@@ -347,20 +344,6 @@ const CTAButton = styled.a`
     font-size: 1.25rem;
     padding: 1rem 2.5rem;
   }
-`;
-
-const SpacerMedium = styled.div`
-  height: 2rem;
-  width: 100%;
-  
-  @media (max-width: 768px) {
-    height: 1.5rem;
-  }
-`;
-
-const SpacerSmall = styled.div`
-  height: 1rem;
-  width: 100%;
 `;
 
 const FormImageContainer = styled.div`
