@@ -1,12 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Header from '../components/Header';
 import HangoutShowcase from '../components/HangoutShowcase';
 import PersonDetailCard from '../components/PersonDetailCard';
 import GroupChatPreview from '../components/GroupChatPreview';
-import HangoutDetail from '../components/HangoutDetail';
+
+// Import form preview image
+import formPreview from '../assets/images/form_preview.png';
 
 const HomePage: React.FC = () => {
+  const [showStickyFooter, setShowStickyFooter] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroSection = document.querySelector('section');
+      const footerCTA = document.querySelector('footer');
+      const mainContent = document.querySelector('main');
+      
+      if (heroSection && footerCTA && mainContent) {
+        const heroBottom = heroSection.getBoundingClientRect().bottom - 500;
+        const footerTop = footerCTA.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        // Show sticky footer when scrolling through main content
+        setShowStickyFooter(heroBottom < 0 && footerTop > windowHeight);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <PageContainer>
       <Header />
@@ -20,6 +44,9 @@ const HomePage: React.FC = () => {
               <br />
               <EmphasisPrimary>New Friends</EmphasisPrimary>
             </HeroQuestion>
+            <HeroSubtitle>
+              Join Hangout to meet new people and make new friends
+            </HeroSubtitle>
           </HeroHeader>
         </HeroContent>
         <HowItWorks>
@@ -37,33 +64,45 @@ const HomePage: React.FC = () => {
 
       {/* Main Content */}
       <MainContent>
+        {/* Form Section */}
+        <ContentBlock>
+          <SectionTitle>
+            Participate by Signing up Through Our Form
+          </SectionTitle>
+          <SpacerMedium />
+          <FormImageContainer>
+            <FormImage src={formPreview} alt="Hangout signup form preview" />
+          </FormImageContainer>
+          <SectionSubtitle>
+            When you sign up using our form, we'll email you a list of hangouts on various interests, group sizes, dates, and locations, posted by other people nearby you.
+          </SectionSubtitle>
+        </ContentBlock>
+
         {/* Categories Section */}
         <ContentBlock>
           <SectionTitle>
-            Hangout is a one-time event where everyone meets for the first time.
+            What is Hangout?
           </SectionTitle>
           <SpacerMedium />
           <HangoutShowcase />
           <SectionSubtitle>
-            Upon signing up on our form, we'll email you a list of hangouts on various interests, group sizes, dates, and locations.
+            Hangout is a one-time event where everyone meets for the first time. Join or host activities you enjoy, and meet new people as a plus.
           </SectionSubtitle>
         </ContentBlock>
 
         {/* Hangouts Section */}
         <ContentBlock>
-          <HangoutsContainer>
-            <SectionTitle>
-              Check Who's In!
-            </SectionTitle>
-            <PersonDetailCard />
-            <SectionSubtitle>
-              For each hangout, you can also check who is participating and view their profiles
-            </SectionSubtitle>
-            <HangoutDetail />
-            <SectionSubtitle>
-              When you find something that interests you, hit the "Join" button to add yourself to the group.
-            </SectionSubtitle>
-          </HangoutsContainer>
+          <SectionTitle>
+            Check Who's In!
+          </SectionTitle>
+          <SpacerMedium />
+          <PersonDetailCard />
+          <SectionSubtitle>
+            See who's joining the hangout before you jump in! We show you member profiles with interests, age, and gender, so you know who you'll meet.
+            <br />
+            <br />
+            If you're hosting a hangout, you're in more control! Set more detailed criteria, like culture, language, and more, to find your perfect first meets.
+          </SectionSubtitle>
         </ContentBlock>
 
         {/* Chat Section */}
@@ -76,13 +115,24 @@ const HomePage: React.FC = () => {
             We'll invite you to an Instagram group chat once you join a hangout. You can keep the conversation going before and after!
           </SectionSubtitle>
         </ContentBlock>
-
-        {/* Call to Action */}
-        <ContentBlock $cta>
-          <CTATitle>Interested in joining a hangout?</CTATitle>
-          <CTAButton href="https://form.typeform.com/to/Cp6lYX6v" target="_blank" rel="noopener noreferrer">Get Started</CTAButton>
-        </ContentBlock>
       </MainContent>
+
+      {/* Footer CTA */}
+      <FooterCTA>
+        <CTAContent>
+          <CTATitle>Ready to find exciting hangouts?</CTATitle>
+          <CTAButton href="https://form.typeform.com/to/Cp6lYX6v" target="_blank" rel="noopener noreferrer">Sign Up Our Form</CTAButton>
+        </CTAContent>
+      </FooterCTA>
+
+      {/* Sticky Footer */}
+      {showStickyFooter && (
+        <StickyFooter>
+          <CTAButton href="https://form.typeform.com/to/Cp6lYX6v" target="_blank" rel="noopener noreferrer">
+            Sign Up Our Form
+          </CTAButton>
+        </StickyFooter>
+      )}
     </PageContainer>
   );
 };
@@ -122,7 +172,7 @@ const HeroContent = styled.div`
 `;
 
 const HeroHeader = styled.div`
-  margin-bottom: 0;
+  margin-bottom: 2rem;
 `;
 
 const HeroQuestion = styled.h1`
@@ -138,7 +188,7 @@ const HeroQuestion = styled.h1`
   @media (max-width: 767px) {
     font-size: 3.5rem;
     line-height: 1.2;
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
   }
 `;
 
@@ -149,6 +199,17 @@ const EmphasisPrimary = styled.span`
   position: relative;
   display: inline-block;
   letter-spacing: -0.02em;
+`;
+
+const HeroSubtitle = styled.p`
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+  max-width: 600px;
+
+  @media (max-width: 767px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const HowItWorks = styled.div`
@@ -163,7 +224,7 @@ const HowItWorks = styled.div`
 `;
 
 const HowItWorksText = styled.p`
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 500;
   margin-bottom: 1rem;
   opacity: 0.9;
@@ -198,10 +259,11 @@ const MainContent = styled.main`
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin-top: 3rem;
 `;
 
 const ContentBlock = styled.div<{ $alternate?: boolean; $cta?: boolean }>`
-  padding: 6rem 2rem;
+  padding: 2rem 2rem;
   background: ${props => props.$cta ? 'linear-gradient(135deg, #f43630 0%, #ff8674 100%)' : 'white'};
   color: ${props => props.$cta ? 'white' : '#1a1a1a'};
   display: flex;
@@ -212,7 +274,7 @@ const ContentBlock = styled.div<{ $alternate?: boolean; $cta?: boolean }>`
   margin: 0 auto;
   
   @media (max-width: 768px) {
-    padding: 4rem 1rem;
+    padding: 1rem 1rem;
   }
 `;
 
@@ -244,24 +306,6 @@ const SectionSubtitle = styled.p`
   @media (max-width: 768px) {
     font-size: 1.1rem;
     margin: 1.5rem 0 3rem;
-  }
-`;
-
-const HangoutsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  align-items: center;
-  
-  ${SectionSubtitle} {
-    margin: 1rem 0 3rem;
-  }
-  
-  @media (max-width: 767px) {
-    align-items: center;
   }
 `;
 
@@ -312,6 +356,79 @@ const SpacerMedium = styled.div`
   
   @media (max-width: 768px) {
     height: 1.5rem;
+  }
+`;
+
+const FormImageContainer = styled.div`
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  
+  /* Sketchy border effect */
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 12px;
+    pointer-events: none;
+    transform: rotate(0.1deg);
+  }
+`;
+
+const FormImage = styled.img`
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+`;
+
+const FooterCTA = styled.footer`
+  min-height: 50vh;
+  width: 100%;
+  background: linear-gradient(135deg, #f43630 0%, #ff8674 100%);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const CTAContent = styled.div`
+  max-width: 1200px;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+`;
+
+const StickyFooter = styled.div`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  animation: slideUp 0.3s ease-out;
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
   }
 `;
 

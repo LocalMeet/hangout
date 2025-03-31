@@ -13,7 +13,7 @@ import tennisImg from '../assets/images/tennis.png';
 import hotpotImg from '../assets/images/hotpot.png';
 import cocktailImg from '../assets/images/cocktail.png';
 import libraryImg from '../assets/images/library.png';
-import writingImg from '../assets/images/writing.png';
+import bakingImg from '../assets/images/baking.png';
 import cherryblossomImg from '../assets/images/cherryblossom.png';
 import hikingImg from '../assets/images/hiking.png';
 
@@ -44,7 +44,7 @@ const CATEGORIES = [
     icon: sportIcon,
     items: [
       { 
-        title: 'Anyone wanna play badminton this saturday?', 
+        title: 'Anyone down to play badminton this Saturday?', 
         location: 'Burnaby, BC', 
         image: badmintonImg,
         date: '2:00PM, 4.6 (Sat)',
@@ -57,7 +57,7 @@ const CATEGORIES = [
         ]
       },
       { 
-        title: 'Looking for tennis partner', 
+        title: 'Looking for Tennis partners', 
         location: 'Vancouver, BC', 
         image: tennisImg,
         date: '10:30AM, 4.7 (Sun)',
@@ -74,7 +74,7 @@ const CATEGORIES = [
     icon: foodDrinkIcon,
     items: [
       { 
-        title: 'New Bigway Hot Pot Coquitlam', 
+        title: 'Bigway Hot Pot Coquitlam', 
         location: 'Coquitlam, BC', 
         image: hotpotImg,
         date: '6:30PM, 4.5 (Fri)',
@@ -106,7 +106,7 @@ const CATEGORIES = [
     icon: bookIcon,
     items: [
       { 
-        title: 'Looking for study mate at VPL', 
+        title: 'Looking for group study mates at VPL', 
         location: 'Downtown Vancouver', 
         image: libraryImg,
         date: '1:00PM, 4.8 (Mon)',
@@ -119,9 +119,9 @@ const CATEGORIES = [
         ]
       },
       { 
-        title: 'Writing workshop', 
+        title: 'Home Baking for Beginners', 
         location: 'Burnaby, BC', 
-        image: writingImg,
+        image: bakingImg,
         date: '3:00PM, 4.9 (Tue)',
         participants: 4,
         maxSize: 6,
@@ -171,107 +171,81 @@ const CATEGORIES = [
 
 const AUTO_ROTATE_INTERVAL = 4000; // 4 seconds
 
-const HangoutShowcase: React.FC = () => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [isAutoRotating, setIsAutoRotating] = useState(true);
+// Browser styled components
+const BrowserContainer = styled.div`
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  
+  /* Sketchy border effect */
+  &::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    border-radius: 12px;
+    pointer-events: none;
+  }
+`;
 
-  useEffect(() => {
-    if (!isAutoRotating) return;
+const BrowserTopBar = styled.div`
+  background: #f0f0f0;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+`;
 
-    const interval = setInterval(() => {
-      setSelectedIndex((prev) => (prev + 1) % CATEGORIES.length);
-    }, AUTO_ROTATE_INTERVAL);
+const BrowserControls = styled.div`
+  display: flex;
+  gap: 8px;
+`;
 
-    return () => clearInterval(interval);
-  }, [isAutoRotating]);
+const BrowserButton = styled.div<{ $color: string }>`
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: ${props => props.$color};
+`;
 
-  const handleCategoryClick = (index: number) => {
-    setSelectedIndex(index);
-    setIsAutoRotating(false);
-    setTimeout(() => setIsAutoRotating(true), AUTO_ROTATE_INTERVAL);
-  };
+const BrowserAddressBar = styled.div`
+  flex: 1;
+  background: white;
+  border-radius: 6px;
+  padding: 6px 12px;
+  margin-left: 8px;
+`;
 
-  return (
-    <ShowcaseContainer>
-      <CategoryList>
-        {CATEGORIES.map((category, index) => (
-          <CategoryItem 
-            key={index}
-            $selected={index === selectedIndex}
-            $categoryIndex={index}
-            onClick={() => handleCategoryClick(index)}
-          >
-            <CategoryIconWrapper>
-              <CategoryImage src={category.icon} alt={`Category ${index + 1}`} />
-            </CategoryIconWrapper>
-          </CategoryItem>
-        ))}
-        <MoreCategories>
-          <MoreDotsIcon>•••</MoreDotsIcon>
-        </MoreCategories>
-      </CategoryList>
-      
-      <HangoutList $categoryIndex={selectedIndex + 1}>
-        {CATEGORIES[selectedIndex].items.map((item, index) => (
-          <HangoutCard key={index}>
-            <HangoutImage>
-              <img src={item.image} alt={item.title} />
-            </HangoutImage>
-            <HangoutContent theme={{ categoryIndex: selectedIndex + 1 }}>
-              <HangoutTitle>{item.title}</HangoutTitle>
-              <HangoutDetails>
-                <HangoutDate>
-                  <CalendarIcon />
-                  {item.date}
-                </HangoutDate>
-                <HangoutLocation>{item.location}</HangoutLocation>
-                <ParticipantInfo>
-                  <ParticipantList>
-                    {item.portraits.map((portrait, i) => (
-                      <ParticipantPortrait key={i}>
-                        <img src={portrait} alt={`Participant ${i + 1}`} />
-                      </ParticipantPortrait>
-                    ))}
-                  </ParticipantList>
-                  <GroupSize>
-                    <UserIcon />
-                    {item.participants}/{item.maxSize}
-                  </GroupSize>
-                </ParticipantInfo>
-              </HangoutDetails>
-            </HangoutContent>
-          </HangoutCard>
-        ))}
-      </HangoutList>
-    </ShowcaseContainer>
-  );
-};
+const BrowserAddressBarContent = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #666;
+  font-size: 13px;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+`;
 
-// Calendar Icon Component
-const CalendarIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-    <line x1="16" y1="2" x2="16" y2="6"></line>
-    <line x1="8" y1="2" x2="8" y2="6"></line>
-    <line x1="3" y1="10" x2="21" y2="10"></line>
-  </svg>
-);
+const LockIcon = styled.div`
+  color: #666;
+  display: flex;
+  align-items: center;
+`;
 
-// User Icon Component
-const UserIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-    <circle cx="12" cy="7" r="4"></circle>
-  </svg>
-);
+const BrowserContent = styled.div`
+  background: white;
+  padding: 24px;
+`;
 
-// Styled Components
 const ShowcaseContainer = styled.div`
   display: flex;
   gap: 3rem;
   width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -406,22 +380,11 @@ const HangoutCard = styled.div`
   overflow: hidden;
   min-height: 100px;
   display: flex;
-  transform: rotate(-1deg);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   border: none;
-  transition: all 0.3s ease;
-
-  &:hover {
-    transform: translateY(-2px) rotate(0deg);
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-  }
 
   &:nth-child(2) {
-    transform: rotate(1deg);
-    
-    &:hover {
-      transform: translateY(-2px) rotate(0deg);
-    }
+    margin-top: 0.5rem;
   }
 `;
 
@@ -561,5 +524,121 @@ const GroupSize = styled.div`
     font-size: 0.75rem;
   }
 `;
+
+const HangoutShowcase: React.FC = () => {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isAutoRotating, setIsAutoRotating] = useState(true);
+
+  useEffect(() => {
+    if (!isAutoRotating) return;
+
+    const interval = setInterval(() => {
+      setSelectedIndex((prev) => (prev + 1) % CATEGORIES.length);
+    }, AUTO_ROTATE_INTERVAL);
+
+    return () => clearInterval(interval);
+  }, [isAutoRotating]);
+
+  const handleCategoryClick = (index: number) => {
+    setSelectedIndex(index);
+    setIsAutoRotating(false);
+    setTimeout(() => setIsAutoRotating(true), AUTO_ROTATE_INTERVAL);
+  };
+
+  return (
+    <BrowserContainer>
+      <BrowserTopBar>
+        <BrowserControls>
+          <BrowserButton $color="#ff5f57" />
+          <BrowserButton $color="#febc2e" />
+          <BrowserButton $color="#28c840" />
+        </BrowserControls>
+        <BrowserAddressBar>
+          <BrowserAddressBarContent>
+            <LockIcon>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+            </LockIcon>
+            hangout
+          </BrowserAddressBarContent>
+        </BrowserAddressBar>
+      </BrowserTopBar>
+      <BrowserContent>
+        <ShowcaseContainer>
+          <CategoryList>
+            {CATEGORIES.map((category, index) => (
+              <CategoryItem 
+                key={index}
+                $selected={index === selectedIndex}
+                $categoryIndex={index}
+                onClick={() => handleCategoryClick(index)}
+              >
+                <CategoryIconWrapper>
+                  <CategoryImage src={category.icon} alt={`Category ${index + 1}`} />
+                </CategoryIconWrapper>
+              </CategoryItem>
+            ))}
+            <MoreCategories>
+              <MoreDotsIcon>•••</MoreDotsIcon>
+            </MoreCategories>
+          </CategoryList>
+          
+          <HangoutList $categoryIndex={selectedIndex + 1}>
+            {CATEGORIES[selectedIndex].items.map((item, index) => (
+              <HangoutCard key={index}>
+                <HangoutImage>
+                  <img src={item.image} alt={item.title} />
+                </HangoutImage>
+                <HangoutContent theme={{ categoryIndex: selectedIndex + 1 }}>
+                  <HangoutTitle>{item.title}</HangoutTitle>
+                  <HangoutDetails>
+                    <HangoutDate>
+                      <CalendarIcon />
+                      {item.date}
+                    </HangoutDate>
+                    <HangoutLocation>{item.location}</HangoutLocation>
+                    <ParticipantInfo>
+                      <ParticipantList>
+                        {item.portraits.map((portrait, i) => (
+                          <ParticipantPortrait key={i}>
+                            <img src={portrait} alt={`Participant ${i + 1}`} />
+                          </ParticipantPortrait>
+                        ))}
+                      </ParticipantList>
+                      <GroupSize>
+                        <UserIcon />
+                        {item.participants}/{item.maxSize}
+                      </GroupSize>
+                    </ParticipantInfo>
+                  </HangoutDetails>
+                </HangoutContent>
+              </HangoutCard>
+            ))}
+          </HangoutList>
+        </ShowcaseContainer>
+      </BrowserContent>
+    </BrowserContainer>
+  );
+};
+
+// Calendar Icon Component
+const CalendarIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+    <line x1="16" y1="2" x2="16" y2="6"></line>
+    <line x1="8" y1="2" x2="8" y2="6"></line>
+    <line x1="3" y1="10" x2="21" y2="10"></line>
+  </svg>
+);
+
+// User Icon Component
+const UserIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+    <circle cx="12" cy="7" r="4"></circle>
+  </svg>
+);
 
 export default HangoutShowcase; 

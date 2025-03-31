@@ -44,11 +44,22 @@ const Container = styled.div`
   padding: 1.5rem;
   background: white;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  
+  /* Sketchy border effect */
+  &::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    border-radius: 12px;
+    pointer-events: none;
+  }
 `;
 
-const LogoHeader = styled.div`
-  display: flex;
+const LogoHeader = styled.div`  display: flex;
   justify-content: center;
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
@@ -95,5 +106,5 @@ const Message = styled.div<{ $sender?: boolean }>`
   max-width: 70%;
   font-size: 0.9rem;
 `;
-
 export default GroupChatPreview; 
+

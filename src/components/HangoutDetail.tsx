@@ -84,25 +84,29 @@ const UserIcon = () => (
 const Card = styled.div`
   background: white;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: 320px;
   margin: 0;
   display: flex;
   flex-direction: column;
-  transform: rotate(-1deg);
-  transition: all 0.3s ease;
+  position: relative;
   
-  &:hover {
-    transform: translateY(-4px) rotate(0deg);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  /* Sketchy border effect */
+  &::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    border-radius: 12px;
+    pointer-events: none;
   }
   
   @media (max-width: 1024px) {
     width: 100%;
     max-width: 380px;
     margin: 0 auto;
-    transform: rotate(0deg);
   }
 `;
 
@@ -210,25 +214,43 @@ const GroupSize = styled.div`
 `;
 
 const JoinButton = styled.button`
-  background: #f43630;
   color: white;
-  border: none;
-  border-radius: 8px;
+  border: 2px solid #000;
+  border-radius: 2px;
   padding: 0.75rem 1.25rem;
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
   margin-top: 0.5rem;
+  position: relative;
   
-  &:hover {
-    background: #e32f29;
-    transform: translateY(-2px);
+  /* Sketchy effect */
+  clip-path: polygon(
+    0 5px, 5px 0,
+    calc(100% - 4px) 0, 100% 4px,
+    100% calc(100% - 5px), calc(100% - 5px) 100%,
+    4px 100%, 0 calc(100% - 4px)
+  );
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: #000;
+    z-index: -1;
+    clip-path: polygon(
+      2px 7px, 7px 2px,
+      calc(100% - 2px) 2px, calc(100% - 2px) 7px,
+      calc(100% - 7px) calc(100% - 2px), calc(100% - 2px) calc(100% - 7px),
+      7px calc(100% - 2px), 2px calc(100% - 7px)
+    );
   }
-  
-  &:active {
-    transform: translateY(0);
-  }
+
+  /* Hand-drawn font */
+  font-family: 'Comic Sans MS', cursive, sans-serif;
 `;
 
 export default HangoutDetail; 

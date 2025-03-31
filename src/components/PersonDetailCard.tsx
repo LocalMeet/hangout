@@ -81,7 +81,7 @@ const PersonDetailCard: React.FC = () => {
         </ParticipantList>
         <GroupSize>
           <UserIcon />
-          4/6
+          3/4
         </GroupSize>
       </ParticipantBadge>
       
@@ -141,20 +141,24 @@ const UserIcon = () => (
 
 // Styled Components
 const CardContainer = styled.div`
-  position: relative;
-  background: transparent;
+  background: white;
   padding: 1rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   width: 280px;
   height: 220px;
   display: flex;
   flex-direction: column;
-  transition: all 0.3s ease;
   
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  /* Sketchy border effect */
+  &::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    border-radius: 12px;
+    pointer-events: none;
   }
   
   @media (max-width: 768px) {
@@ -176,7 +180,6 @@ const ParticipantBadge = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 0.75rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   z-index: 2;
 `;
 
@@ -190,7 +193,6 @@ const ParticipantPortrait = styled.div`
   height: 28px;
   border-radius: 50%;
   overflow: hidden;
-  border: 2px solid white;
   margin-right: -10px;
   position: relative;
 
@@ -233,8 +235,6 @@ const PersonPortrait = styled.div`
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
-  border: 2px solid #f8f8f8;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   
   img {
     width: 100%;
