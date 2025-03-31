@@ -73,6 +73,7 @@ Error generating stack: `+i.message+`
   max-width: 800px;
   margin: 0 auto;
   position: relative;
+  border: 1px solid #555;
   
   /* Sketchy border effect */
   &::before {
@@ -352,36 +353,17 @@ Error generating stack: `+i.message+`
   @media (max-width: 768px) {
     font-size: 0.75rem;
   }
-`,Qg=()=>{const[e,t]=Pe.useState(0),[n,r]=Pe.useState(!0);Pe.useEffect(()=>{if(!n)return;const i=setInterval(()=>{t(l=>(l+1)%ll.length)},Ma);return()=>clearInterval(i)},[n]);const o=i=>{t(i),r(!1),setTimeout(()=>r(!0),Ma)};return m.jsxs(wg,{children:[m.jsxs(xg,{children:[m.jsxs(Sg,{children:[m.jsx(ul,{$color:"#ff5f57"}),m.jsx(ul,{$color:"#febc2e"}),m.jsx(ul,{$color:"#28c840"})]}),m.jsx(kg,{children:m.jsxs(Cg,{children:[m.jsx(Eg,{children:m.jsxs("svg",{width:"12",height:"12",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",children:[m.jsx("rect",{x:"3",y:"11",width:"18",height:"11",rx:"2",ry:"2"}),m.jsx("path",{d:"M7 11V7a5 5 0 0 1 10 0v4"})]})}),"hangout"]})})]}),m.jsx(_g,{children:m.jsxs(Pg,{children:[m.jsxs(jg,{children:[ll.map((i,l)=>m.jsx(zg,{$selected:l===e,$categoryIndex:l,onClick:()=>o(l),children:m.jsx(Ng,{children:m.jsx(Ig,{src:i.icon,alt:`Category ${l+1}`})})},l)),m.jsx(Tg,{children:m.jsx($g,{children:"•••"})})]}),m.jsx(Lg,{$categoryIndex:e+1,children:ll[e].items.map((i,l)=>m.jsxs(Rg,{children:[m.jsx(Og,{children:m.jsx("img",{src:i.image,alt:i.title})}),m.jsxs(Dg,{theme:{categoryIndex:e+1},children:[m.jsx(Mg,{children:i.title}),m.jsxs(Fg,{children:[m.jsxs(Ag,{children:[m.jsx(Yg,{}),i.date]}),m.jsx(Bg,{children:i.location}),m.jsxs(Ug,{children:[m.jsx(Hg,{children:i.portraits.map((u,s)=>m.jsx(Wg,{children:m.jsx("img",{src:u,alt:`Participant ${s+1}`})},s))}),m.jsxs(Vg,{children:[m.jsx(Gg,{}),i.participants,"/",i.maxSize]})]})]})]})]},l))})]})})]})},Yg=()=>m.jsxs("svg",{width:"14",height:"14",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:[m.jsx("rect",{x:"3",y:"4",width:"18",height:"18",rx:"2",ry:"2"}),m.jsx("line",{x1:"16",y1:"2",x2:"16",y2:"6"}),m.jsx("line",{x1:"8",y1:"2",x2:"8",y2:"6"}),m.jsx("line",{x1:"3",y1:"10",x2:"21",y2:"10"})]}),Gg=()=>m.jsxs("svg",{width:"14",height:"14",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:[m.jsx("path",{d:"M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"}),m.jsx("circle",{cx:"12",cy:"7",r:"4"})]}),Kg=[Lr,Rr,_n,pr],Fa=[{name:"Sarah Chen",birthDate:"April 15, 2001",introduction:"Passionate foodie & amateur photographer who loves exploring new restaurants",interests:["Food Photography","Cooking","Travel"],portrait:Lr},{name:"Mike Johnson",birthDate:"June 22, 2003",introduction:"Sports enthusiast and coffee lover. Always up for a game of tennis!",interests:["Tennis","Coffee","Hiking"],portrait:_n},{name:"Jay Kim",birthDate:"March 8, 1999",introduction:"Photography enthusiast with a passion for capturing urban landscapes.",interests:["Photography","Digital Art"],portrait:Rr},{name:"Emily Park",birthDate:"September 3, 2000",introduction:"Book lover and aspiring writer. Looking to connect with fellow literature enthusiasts.",interests:["Reading","Writing","Poetry"],portrait:pr},{name:"David Lee",birthDate:"February 10, 1998",introduction:"Outdoor adventure seeker who loves hiking, camping, and exploring new trails.",interests:["Hiking","Camping","Nature"],portrait:No}],Xg=5e3,Zg=()=>{const[e,t]=Pe.useState(0);Pe.useEffect(()=>{const r=setInterval(()=>{t(o=>(o+1)%Fa.length)},Xg);return()=>clearInterval(r)},[]);const n=Fa[e];return m.jsxs(e0,{children:[m.jsxs(t0,{children:[m.jsx(n0,{children:Kg.map((r,o)=>m.jsx(r0,{children:m.jsx("img",{src:r,alt:`Participant ${o+1}`})},o))}),m.jsxs(o0,{children:[m.jsx(bg,{}),"3/4"]})]}),m.jsxs(i0,{children:[m.jsx(l0,{children:m.jsx("img",{src:n.portrait,alt:n.name})}),m.jsxs(u0,{children:[m.jsx(s0,{children:n.name}),m.jsxs(a0,{children:[m.jsx(Jg,{}),n.birthDate]})]})]}),m.jsx(c0,{children:n.introduction}),m.jsxs(f0,{children:[m.jsx(qg,{}),m.jsx(d0,{children:n.interests.map((r,o)=>m.jsx(p0,{children:r},o))})]})]})},Jg=()=>m.jsxs("svg",{width:"14",height:"14",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:[m.jsx("rect",{x:"3",y:"4",width:"18",height:"18",rx:"2",ry:"2"}),m.jsx("line",{x1:"16",y1:"2",x2:"16",y2:"6"}),m.jsx("line",{x1:"8",y1:"2",x2:"8",y2:"6"}),m.jsx("line",{x1:"3",y1:"10",x2:"21",y2:"10"})]}),qg=()=>m.jsx("svg",{width:"14",height:"14",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:m.jsx("path",{d:"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"})}),bg=()=>m.jsxs("svg",{width:"14",height:"14",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:[m.jsx("path",{d:"M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"}),m.jsx("circle",{cx:"12",cy:"7",r:"4"})]}),e0=_.div`
-  background: white;
-  padding: 1rem;
-  border-radius: 12px;
-  width: 280px;
-  height: 220px;
+`,Qg=()=>{const[e,t]=Pe.useState(0),[n,r]=Pe.useState(!0);Pe.useEffect(()=>{if(!n)return;const i=setInterval(()=>{t(l=>(l+1)%ll.length)},Ma);return()=>clearInterval(i)},[n]);const o=i=>{t(i),r(!1),setTimeout(()=>r(!0),Ma)};return m.jsxs(wg,{children:[m.jsxs(xg,{children:[m.jsxs(Sg,{children:[m.jsx(ul,{$color:"#ff5f57"}),m.jsx(ul,{$color:"#febc2e"}),m.jsx(ul,{$color:"#28c840"})]}),m.jsx(kg,{children:m.jsxs(Cg,{children:[m.jsx(Eg,{children:m.jsxs("svg",{width:"12",height:"12",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",children:[m.jsx("rect",{x:"3",y:"11",width:"18",height:"11",rx:"2",ry:"2"}),m.jsx("path",{d:"M7 11V7a5 5 0 0 1 10 0v4"})]})}),"hangout"]})})]}),m.jsx(_g,{children:m.jsxs(Pg,{children:[m.jsxs(jg,{children:[ll.map((i,l)=>m.jsx(zg,{$selected:l===e,$categoryIndex:l,onClick:()=>o(l),children:m.jsx(Ng,{children:m.jsx(Ig,{src:i.icon,alt:`Category ${l+1}`})})},l)),m.jsx(Tg,{children:m.jsx($g,{children:"•••"})})]}),m.jsx(Lg,{$categoryIndex:e+1,children:ll[e].items.map((i,l)=>m.jsxs(Rg,{children:[m.jsx(Og,{children:m.jsx("img",{src:i.image,alt:i.title})}),m.jsxs(Dg,{theme:{categoryIndex:e+1},children:[m.jsx(Mg,{children:i.title}),m.jsxs(Fg,{children:[m.jsxs(Ag,{children:[m.jsx(Yg,{}),i.date]}),m.jsx(Bg,{children:i.location}),m.jsxs(Ug,{children:[m.jsx(Hg,{children:i.portraits.map((u,s)=>m.jsx(Wg,{children:m.jsx("img",{src:u,alt:`Participant ${s+1}`})},s))}),m.jsxs(Vg,{children:[m.jsx(Gg,{}),i.participants,"/",i.maxSize]})]})]})]})]},l))})]})})]})},Yg=()=>m.jsxs("svg",{width:"14",height:"14",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:[m.jsx("rect",{x:"3",y:"4",width:"18",height:"18",rx:"2",ry:"2"}),m.jsx("line",{x1:"16",y1:"2",x2:"16",y2:"6"}),m.jsx("line",{x1:"8",y1:"2",x2:"8",y2:"6"}),m.jsx("line",{x1:"3",y1:"10",x2:"21",y2:"10"})]}),Gg=()=>m.jsxs("svg",{width:"14",height:"14",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:[m.jsx("path",{d:"M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"}),m.jsx("circle",{cx:"12",cy:"7",r:"4"})]}),Kg=[Lr,Rr,_n,pr],Fa=[{name:"Sarah Chen",birthDate:"April 15, 2001",introduction:"Passionate foodie & amateur photographer who loves exploring new restaurants",interests:["Food Photography","Cooking","Travel"],portrait:Lr},{name:"Mike Johnson",birthDate:"June 22, 2003",introduction:"Sports enthusiast and coffee lover. Always up for a game of tennis!",interests:["Tennis","Coffee","Hiking"],portrait:_n},{name:"Jay Kim",birthDate:"March 8, 1999",introduction:"Photography enthusiast with a passion for capturing urban landscapes.",interests:["Photography","Digital Art"],portrait:Rr},{name:"Emily Park",birthDate:"September 3, 2000",introduction:"Book lover and aspiring writer. Looking to connect with fellow literature enthusiasts.",interests:["Reading","Writing","Poetry"],portrait:pr},{name:"David Lee",birthDate:"February 10, 1998",introduction:"Outdoor adventure seeker who loves hiking, camping, and exploring new trails.",interests:["Hiking","Camping","Nature"],portrait:No}],Xg=5e3,Zg=()=>{const[e,t]=Pe.useState(0);Pe.useEffect(()=>{const r=setInterval(()=>{t(o=>(o+1)%Fa.length)},Xg);return()=>clearInterval(r)},[]);const n=Fa[e];return m.jsxs(e0,{children:[m.jsxs(t0,{children:[m.jsx(n0,{children:Kg.map((r,o)=>m.jsx(r0,{children:m.jsx("img",{src:r,alt:`Participant ${o+1}`})},o))}),m.jsxs(o0,{children:[m.jsx(bg,{}),"4/5"]})]}),m.jsxs(h0,{children:[m.jsxs(i0,{children:[m.jsx(l0,{children:m.jsx("img",{src:n.portrait,alt:n.name})}),m.jsxs(u0,{children:[m.jsx(s0,{children:n.name}),m.jsxs(a0,{children:[m.jsx(Jg,{}),n.birthDate]})]})]}),m.jsx(c0,{children:n.introduction}),m.jsxs(f0,{children:[m.jsx(qg,{}),m.jsx(d0,{children:n.interests.map((r,o)=>m.jsx(p0,{children:r},o))})]})]})]})},Jg=()=>m.jsxs("svg",{width:"14",height:"14",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:[m.jsx("rect",{x:"3",y:"4",width:"18",height:"18",rx:"2",ry:"2"}),m.jsx("line",{x1:"16",y1:"2",x2:"16",y2:"6"}),m.jsx("line",{x1:"8",y1:"2",x2:"8",y2:"6"}),m.jsx("line",{x1:"3",y1:"10",x2:"21",y2:"10"})]}),qg=()=>m.jsx("svg",{width:"14",height:"14",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:m.jsx("path",{d:"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"})}),bg=()=>m.jsxs("svg",{width:"14",height:"14",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:[m.jsx("path",{d:"M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"}),m.jsx("circle",{cx:"12",cy:"7",r:"4"})]}),e0=_.div`
   display: flex;
   flex-direction: column;
-  
-  /* Sketchy border effect */
-  &::before {
-    content: '';
-    position: absolute;
-    top: -1px;
-    left: -1px;
-    right: -1px;
-    bottom: -1px;
-    border-radius: 12px;
-    pointer-events: none;
-  }
+  gap: 0.75rem;
+  width: 280px;
   
   @media (max-width: 768px) {
     width: 100%;
-    height: 180px;
     margin: 0 auto;
   }
 `,t0=_.div`
-  position: absolute;
-  top: -30px;
-  left: -15px;
   background: white;
   border-radius: 12px;
   padding: 0.5rem;
@@ -390,7 +372,8 @@ Error generating stack: `+i.message+`
   flex-direction: row;
   align-items: center;
   gap: 0.75rem;
-  z-index: 2;
+  border: 1px solid #555;
+  width: fit-content;
 `,n0=_.div`
   display: flex;
   align-items: center;
@@ -487,13 +470,27 @@ Error generating stack: `+i.message+`
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
   white-space: nowrap;
-`,h0=()=>m.jsxs(m0,{children:[m.jsx(g0,{children:m.jsx(v0,{src:"https://ik.imagekit.io/qqtube/Social_Media_Logos/%C4%B0nstagram-Profilime-Kim-Bakt%C4%B1-1_tCBJPR6ukzG.png?updatedAt=1662141771142",alt:"Instagram Logo"})}),m.jsxs(y0,{children:[m.jsxs(sl,{children:[m.jsx(al,{children:m.jsx("img",{src:Lr,alt:"User 1"})}),m.jsx(cl,{$sender:!0,children:"Hey everyone, looking forward to Saturday!"})]}),m.jsxs(sl,{$align:"right",children:[m.jsx(cl,{children:"Me too! What time should we meet?"}),m.jsx(al,{children:m.jsx("img",{src:Rr,alt:"User 2"})})]}),m.jsxs(sl,{children:[m.jsx(al,{children:m.jsx("img",{src:_n,alt:"User 3"})}),m.jsx(cl,{$sender:!0,children:"I was thinking around 2pm, does that work?"})]})]})]}),m0=_.div`
+`,h0=_.div`
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  width: 100%;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #555;
+  
+  @media (max-width: 768px) {
+    height: 180px;
+  }
+`,m0=()=>m.jsxs(g0,{children:[m.jsx(v0,{children:m.jsx(y0,{src:"https://ik.imagekit.io/qqtube/Social_Media_Logos/%C4%B0nstagram-Profilime-Kim-Bakt%C4%B1-1_tCBJPR6ukzG.png?updatedAt=1662141771142",alt:"Instagram Logo"})}),m.jsxs(w0,{children:[m.jsxs(sl,{children:[m.jsx(al,{children:m.jsx("img",{src:Lr,alt:"User 1"})}),m.jsx(cl,{$sender:!0,children:"Hey everyone, looking forward to Saturday!"})]}),m.jsxs(sl,{$align:"right",children:[m.jsx(cl,{children:"Me too! What time should we meet?"}),m.jsx(al,{children:m.jsx("img",{src:Rr,alt:"User 2"})})]}),m.jsxs(sl,{children:[m.jsx(al,{children:m.jsx("img",{src:_n,alt:"User 3"})}),m.jsx(cl,{$sender:!0,children:"I was thinking around 2pm, does that work?"})]})]})]}),g0=_.div`
   max-width: 800px;
   margin: 0 auto;
   padding: 1.5rem;
   background: white;
   border-radius: 12px;
   position: relative;
+  border: 1px solid #555;
   
   /* Sketchy border effect */
   &::before {
@@ -506,15 +503,15 @@ Error generating stack: `+i.message+`
     border-radius: 12px;
     pointer-events: none;
   }
-`,g0=_.div`  display: flex;
+`,v0=_.div`  display: flex;
   justify-content: center;
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #efefef;
-`,v0=_.img`
+`,y0=_.img`
   height: 40px;
   object-fit: contain;
-`,y0=_.div`
+`,w0=_.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -542,11 +539,11 @@ Error generating stack: `+i.message+`
   border-radius: 18px;
   max-width: 70%;
   font-size: 0.9rem;
-`,w0="/hangout/assets/form_preview-D0V7cxTB.png",x0=()=>{const[e,t]=Pe.useState(!1);return Pe.useEffect(()=>{const n=()=>{const r=document.querySelector("section"),o=document.querySelector("footer"),i=document.querySelector("main");if(r&&o&&i){const l=r.getBoundingClientRect().bottom-500,u=o.getBoundingClientRect().top,s=window.innerHeight;t(l<0&&u>s)}};return window.addEventListener("scroll",n),()=>window.removeEventListener("scroll",n)},[]),m.jsxs(S0,{children:[m.jsx(tg,{}),m.jsxs(k0,{children:[m.jsx(C0,{children:m.jsxs(E0,{children:[m.jsxs(_0,{children:["Hangout,",m.jsx("br",{}),m.jsx(P0,{children:"New Friends"})]}),m.jsx(j0,{children:"Join Hangout to meet new people and make new friends"})]})}),m.jsxs(z0,{children:[m.jsx(N0,{children:"How does Hangout work?"}),m.jsxs(I0,{onClick:()=>{var n;return window.scrollTo({top:(n=document.getElementById("categories"))==null?void 0:n.offsetTop,behavior:"smooth"})},children:[m.jsx("svg",{xmlns:"http://www.w3.org/2000/svg",width:"32",height:"32",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:m.jsx("polyline",{points:"6 9 12 15 18 9"})}),m.jsx("svg",{xmlns:"http://www.w3.org/2000/svg",width:"32",height:"32",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",style:{marginTop:"-12px"},children:m.jsx("polyline",{points:"6 9 12 15 18 9"})})]})]})]}),m.jsxs(T0,{children:[m.jsxs(so,{children:[m.jsx(ao,{children:"Participate by Signing up Through Our Form"}),m.jsx(Ba,{}),m.jsx(R0,{children:m.jsx(O0,{src:w0,alt:"Hangout signup form preview"})}),m.jsx(co,{children:"When you sign up using our form, we'll email you a list of hangouts on various interests, group sizes, dates, and locations, posted by other people nearby you."})]}),m.jsxs(so,{children:[m.jsx(ao,{children:"What is Hangout?"}),m.jsx(Ba,{}),m.jsx(Qg,{}),m.jsx(co,{children:"Hangout is a one-time event where everyone meets for the first time. Join or host activities you enjoy, and meet new people as a plus."})]}),m.jsxs(so,{children:[m.jsx(ao,{children:"Check Who's In!"}),m.jsx(L0,{}),m.jsx(Zg,{}),m.jsxs(co,{children:["See who's joining the hangout before you jump in! We show you member profiles with interests, age, and gender, so you know who you'll meet.",m.jsx("br",{}),m.jsx("br",{}),"If you're hosting a hangout, you're in more control. Set more detailed criteria, like culture, language, and more, to find your perfect first meets."]})]}),m.jsxs(so,{children:[m.jsx(ao,{children:"Group Chat on Instagram"}),m.jsx(h0,{}),m.jsx(co,{children:"We'll invite you to an Instagram group chat once you join a hangout. You can keep the conversation going before and after!"})]})]}),m.jsx(D0,{children:m.jsxs(M0,{children:[m.jsx($0,{children:"Ready to find exciting hangouts?"}),m.jsx(Aa,{href:"https://form.typeform.com/to/Cp6lYX6v",target:"_blank",rel:"noopener noreferrer",children:"Sign Up Our Form"})]})}),e&&m.jsx(F0,{children:m.jsx(Aa,{href:"https://form.typeform.com/to/Cp6lYX6v",target:"_blank",rel:"noopener noreferrer",children:"Sign Up Our Form"})})]})},S0=_.div`
+`,x0="/hangout/assets/form_preview-B8xNrx4h.png",S0=()=>{const[e,t]=Pe.useState(!1);return Pe.useEffect(()=>{const n=()=>{const r=document.querySelector("section"),o=document.querySelector("footer"),i=document.querySelector("main");if(r&&o&&i){const l=r.getBoundingClientRect().bottom-500,u=o.getBoundingClientRect().top,s=window.innerHeight;t(l<0&&u>s)}};return window.addEventListener("scroll",n),()=>window.removeEventListener("scroll",n)},[]),m.jsxs(k0,{children:[m.jsx(tg,{}),m.jsxs(C0,{children:[m.jsx(E0,{children:m.jsxs(_0,{children:[m.jsxs(P0,{children:["Hangout,",m.jsx("br",{}),m.jsx(j0,{children:"New Friends"})]}),m.jsx(z0,{children:"Join Hangout to meet new people and make new friends"})]})}),m.jsxs(N0,{children:[m.jsx(I0,{children:"How does Hangout work?"}),m.jsxs(T0,{onClick:()=>{var n;return window.scrollTo({top:(n=document.getElementById("categories"))==null?void 0:n.offsetTop,behavior:"smooth"})},children:[m.jsx("svg",{xmlns:"http://www.w3.org/2000/svg",width:"32",height:"32",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:m.jsx("polyline",{points:"6 9 12 15 18 9"})}),m.jsx("svg",{xmlns:"http://www.w3.org/2000/svg",width:"32",height:"32",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",style:{marginTop:"-12px"},children:m.jsx("polyline",{points:"6 9 12 15 18 9"})})]})]})]}),m.jsxs($0,{children:[m.jsxs(so,{children:[m.jsx(ao,{children:"Participate by Signing up Through Our Form"}),m.jsx(Ba,{}),m.jsx(O0,{children:m.jsx(D0,{src:x0,alt:"Hangout signup form preview"})}),m.jsx(co,{children:"When you sign up using our form, we'll email you a list of hangouts on various interests, group sizes, dates, and locations, posted by other people nearby you."})]}),m.jsxs(so,{children:[m.jsx(ao,{children:"What is Hangout?"}),m.jsx(Ba,{}),m.jsx(Qg,{}),m.jsx(co,{children:"Hangout is a one-time event where everyone meets for the first time. Join or host activities you enjoy, and meet new people as a plus."})]}),m.jsxs(so,{children:[m.jsx(ao,{children:"Check Who's In!"}),m.jsx(R0,{}),m.jsx(Zg,{}),m.jsxs(co,{children:["See who's joining the hangout before you jump in! We show you member profiles with interests, age, and gender, so you know who you'll meet.",m.jsx("br",{}),m.jsx("br",{}),"If you're hosting a hangout, you're in more control. Set more detailed criteria, like culture, language, and more, to find your perfect first meets."]})]}),m.jsxs(so,{children:[m.jsx(ao,{children:"Group Chat on Instagram"}),m.jsx(m0,{}),m.jsx(co,{children:"We'll invite you to an Instagram group chat once you join a hangout. You can keep the conversation going before and after!"})]})]}),m.jsx(M0,{children:m.jsxs(F0,{children:[m.jsx(L0,{children:"Ready to find exciting hangouts?"}),m.jsx(Aa,{href:"https://form.typeform.com/to/Cp6lYX6v",target:"_blank",rel:"noopener noreferrer",children:"Sign Up Our Form"})]})}),e&&m.jsx(A0,{children:m.jsx(Aa,{href:"https://form.typeform.com/to/Cp6lYX6v",target:"_blank",rel:"noopener noreferrer",children:"Sign Up Our Form"})})]})},k0=_.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-`,k0=_.section`
+`,C0=_.section`
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -555,7 +552,7 @@ Error generating stack: `+i.message+`
   background: linear-gradient(135deg, #f43630 0%, #ff8674 100%);
   color: #ffffff;
   position: relative;
-`,C0=_.div`
+`,E0=_.div`
   max-width: 1000px;
   width: 100%;
   text-align: left;
@@ -569,9 +566,9 @@ Error generating stack: `+i.message+`
   @media (max-width: 767px) {
     padding: 0 1rem;
   }
-`,E0=_.div`
+`,_0=_.div`
   margin-bottom: 2rem;
-`,_0=_.h1`
+`,P0=_.h1`
   font-size: 6rem;
   font-weight: 800;
   color: #ffffff;
@@ -586,14 +583,14 @@ Error generating stack: `+i.message+`
     line-height: 1.2;
     margin-bottom: 0rem;
   }
-`,P0=_.span`
+`,j0=_.span`
   color: white;
   font-size: 1.2em;
   font-weight: 900;
   position: relative;
   display: inline-block;
   letter-spacing: -0.02em;
-`,j0=_.p`
+`,z0=_.p`
   font-size: 1.5rem;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.5;
@@ -602,7 +599,7 @@ Error generating stack: `+i.message+`
   @media (max-width: 767px) {
     font-size: 1.2rem;
   }
-`,z0=_.div`
+`,N0=_.div`
   position: absolute;
   bottom: 3rem;
   left: 0;
@@ -611,12 +608,12 @@ Error generating stack: `+i.message+`
   flex-direction: column;
   align-items: center;
   text-align: center;
-`,N0=_.p`
+`,I0=_.p`
   font-size: 1.75rem;
   font-weight: 500;
   margin-bottom: 1rem;
   opacity: 0.9;
-`,I0=_.div`
+`,T0=_.div`
   cursor: pointer;
   animation: bounce 2s infinite;
   display: flex;
@@ -639,7 +636,7 @@ Error generating stack: `+i.message+`
   &:hover {
     opacity: 0.8;
   }
-`,T0=_.main`
+`,$0=_.main`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -664,7 +661,6 @@ Error generating stack: `+i.message+`
   color: #333;
   font-size: 2.5rem;
   line-height: 1.4;
-  max-width: 800px;
   margin: 0 0 1.5rem;
   font-weight: 700;
 
@@ -675,17 +671,17 @@ Error generating stack: `+i.message+`
 `,co=_.p`
   text-align: left;
   color: #555;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   line-height: 1.6;
   max-width: 800px;
   margin: 2rem 0 4rem;
   font-weight: 400;
 
   @media (max-width: 768px) {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     margin: 1.5rem 0 3rem;
   }
-`,$0=_.h2`
+`,L0=_.h2`
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 2rem;
@@ -729,16 +725,17 @@ Error generating stack: `+i.message+`
   @media (max-width: 768px) {
     height: 1.5rem;
   }
-`,L0=_.div`
+`,R0=_.div`
   height: 1rem;
   width: 100%;
-`,R0=_.div`
+`,O0=_.div`
   width: 100%;
-  max-width: 800px;
+  max-width: 500px;
   margin: 0 auto;
   border-radius: 12px;
   overflow: hidden;
   position: relative;
+  border: 1px solid #555;
   
   /* Sketchy border effect */
   &::before {
@@ -752,12 +749,12 @@ Error generating stack: `+i.message+`
     pointer-events: none;
     transform: rotate(0.1deg);
   }
-`,O0=_.img`
+`,D0=_.img`
   width: 100%;
   height: auto;
   display: block;
   object-fit: cover;
-`,D0=_.footer`
+`,M0=_.footer`
   min-height: 50vh;
   width: 100%;
   background: linear-gradient(135deg, #f43630 0%, #ff8674 100%);
@@ -765,7 +762,7 @@ Error generating stack: `+i.message+`
   display: flex;
   justify-content: center;
   align-items: center;
-`,M0=_.div`
+`,F0=_.div`
   max-width: 1200px;
   width: 100%;
   padding: 2rem;
@@ -773,7 +770,7 @@ Error generating stack: `+i.message+`
   flex-direction: column;
   align-items: center;
   text-align: center;
-`,F0=_.div`
+`,A0=_.div`
   position: fixed;
   bottom: 0;
   left: 0;
@@ -795,7 +792,7 @@ Error generating stack: `+i.message+`
       transform: translateY(0);
     }
   }
-`,A0=eg`
+`,B0=eg`
   :root {
     --primary-gradient: linear-gradient(135deg, #f43630 0%, #ff8674 100%);
     --secondary-gradient: linear-gradient(135deg, #4c47f7 0%, #6fccff 100%);
@@ -824,4 +821,4 @@ Error generating stack: `+i.message+`
     cursor: pointer;
     font-family: inherit;
   }
-`;function B0(){return m.jsxs(m.Fragment,{children:[m.jsx(A0,{}),m.jsx(x0,{})]})}ed(document.getElementById("root")).render(m.jsx(Pe.StrictMode,{children:m.jsx(B0,{})}));
+`;function U0(){return m.jsxs(m.Fragment,{children:[m.jsx(B0,{}),m.jsx(S0,{})]})}ed(document.getElementById("root")).render(m.jsx(Pe.StrictMode,{children:m.jsx(U0,{})}));
