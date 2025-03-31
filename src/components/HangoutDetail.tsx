@@ -90,6 +90,7 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+  border: 1px solid #555;
   
   /* Sketchy border effect */
   &::before {

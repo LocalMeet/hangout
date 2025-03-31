@@ -180,6 +180,7 @@ const BrowserContainer = styled.div`
   max-width: 800px;
   margin: 0 auto;
   position: relative;
+  border: 1px solid #555;
   
   /* Sketchy border effect */
   &::before {

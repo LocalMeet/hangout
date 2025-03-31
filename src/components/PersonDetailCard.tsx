@@ -70,7 +70,7 @@ const PersonDetailCard: React.FC = () => {
   const person = PEOPLE[selectedIndex];
 
   return (
-    <CardContainer>
+    <CardWrapper>
       <ParticipantBadge>
         <ParticipantList>
           {PARTICIPANTS.map((portrait, i) => (
@@ -81,38 +81,40 @@ const PersonDetailCard: React.FC = () => {
         </ParticipantList>
         <GroupSize>
           <UserIcon />
-          3/4
+          4/5
         </GroupSize>
       </ParticipantBadge>
       
-      <PersonHeader>
-        <PersonPortrait>
-          <img src={person.portrait} alt={person.name} />
-        </PersonPortrait>
-        <PersonBasicInfo>
-          <PersonName>{person.name}</PersonName>
-          <PersonBirth>
-            <CalendarIcon />
-            {person.birthDate}
-          </PersonBirth>
-        </PersonBasicInfo>
-      </PersonHeader>
-      
-      <PersonIntro>
-        {person.introduction}
-      </PersonIntro>
-      
-      <PersonInterests>
-        <HeartIcon />
-        <InterestTags>
-          {person.interests.map((interest, index) => (
-            <InterestTag key={index}>
-              {interest}
-            </InterestTag>
-          ))}
-        </InterestTags>
-      </PersonInterests>
-    </CardContainer>
+      <CardContainer>
+        <PersonHeader>
+          <PersonPortrait>
+            <img src={person.portrait} alt={person.name} />
+          </PersonPortrait>
+          <PersonBasicInfo>
+            <PersonName>{person.name}</PersonName>
+            <PersonBirth>
+              <CalendarIcon />
+              {person.birthDate}
+            </PersonBirth>
+          </PersonBasicInfo>
+        </PersonHeader>
+        
+        <PersonIntro>
+          {person.introduction}
+        </PersonIntro>
+        
+        <PersonInterests>
+          <HeartIcon />
+          <InterestTags>
+            {person.interests.map((interest, index) => (
+              <InterestTag key={index}>
+                {interest}
+              </InterestTag>
+            ))}
+          </InterestTags>
+        </PersonInterests>
+      </CardContainer>
+    </CardWrapper>
   );
 };
 
@@ -140,38 +142,19 @@ const UserIcon = () => (
 );
 
 // Styled Components
-const CardContainer = styled.div`
-  background: white;
-  padding: 1rem;
-  border-radius: 12px;
-  width: 280px;
-  height: 220px;
+const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  
-  /* Sketchy border effect */
-  &::before {
-    content: '';
-    position: absolute;
-    top: -1px;
-    left: -1px;
-    right: -1px;
-    bottom: -1px;
-    border-radius: 12px;
-    pointer-events: none;
-  }
+  gap: 0.75rem;
+  width: 280px;
   
   @media (max-width: 768px) {
     width: 100%;
-    height: 180px;
     margin: 0 auto;
   }
 `;
 
 const ParticipantBadge = styled.div`
-  position: absolute;
-  top: -30px;
-  left: -15px;
   background: white;
   border-radius: 12px;
   padding: 0.5rem;
@@ -180,7 +163,8 @@ const ParticipantBadge = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 0.75rem;
-  z-index: 2;
+  border: 1px solid #555;
+  width: fit-content;
 `;
 
 const ParticipantList = styled.div`
@@ -301,6 +285,21 @@ const InterestTag = styled.span`
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
   white-space: nowrap;
+`;
+
+const CardContainer = styled.div`
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  width: 100%;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #555;
+  
+  @media (max-width: 768px) {
+    height: 180px;
+  }
 `;
 
 export default PersonDetailCard; 

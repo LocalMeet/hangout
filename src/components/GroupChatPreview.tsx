@@ -45,6 +45,7 @@ const Container = styled.div`
   background: white;
   border-radius: 12px;
   position: relative;
+  border: 1px solid #555;
   
   /* Sketchy border effect */
   &::before {

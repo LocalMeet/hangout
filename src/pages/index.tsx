@@ -284,7 +284,6 @@ const SectionTitle = styled.h2`
   color: #333;
   font-size: 2.5rem;
   line-height: 1.4;
-  max-width: 800px;
   margin: 0 0 1.5rem;
   font-weight: 700;
 
@@ -297,14 +296,14 @@ const SectionTitle = styled.h2`
 const SectionSubtitle = styled.p`
   text-align: left;
   color: #555;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   line-height: 1.6;
   max-width: 800px;
   margin: 2rem 0 4rem;
   font-weight: 400;
 
   @media (max-width: 768px) {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     margin: 1.5rem 0 3rem;
   }
 `;
@@ -366,11 +365,12 @@ const SpacerSmall = styled.div`
 
 const FormImageContainer = styled.div`
   width: 100%;
-  max-width: 800px;
+  max-width: 500px;
   margin: 0 auto;
   border-radius: 12px;
   overflow: hidden;
   position: relative;
+  border: 1px solid #555;
   
   /* Sketchy border effect */
   &::before {
