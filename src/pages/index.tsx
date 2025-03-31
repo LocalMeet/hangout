@@ -95,13 +95,13 @@ const HomePage: React.FC = () => {
           <SectionTitle>
             Check Who's In!
           </SectionTitle>
-          <SpacerMedium />
+          <SpacerSmall />
           <PersonDetailCard />
           <SectionSubtitle>
             See who's joining the hangout before you jump in! We show you member profiles with interests, age, and gender, so you know who you'll meet.
             <br />
             <br />
-            If you're hosting a hangout, you're in more control! Set more detailed criteria, like culture, language, and more, to find your perfect first meets.
+            If you're hosting a hangout, you're in more control. Set more detailed criteria, like culture, language, and more, to find your perfect first meets.
           </SectionSubtitle>
         </ContentBlock>
 
@@ -357,6 +357,11 @@ const SpacerMedium = styled.div`
   @media (max-width: 768px) {
     height: 1.5rem;
   }
+`;
+
+const SpacerSmall = styled.div`
+  height: 1rem;
+  width: 100%;
 `;
 
 const FormImageContainer = styled.div`
